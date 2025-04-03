@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Meses del Año</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffebcd;
+            text-align: center;
+            margin: 40px;
+        }
+        h2 {
+            color: #8b0000;
+            font-size: 24px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 350px;
+            margin: auto;
+        }
+        li {
+            background: linear-gradient(to right, #ff7f50, #ff4500);
+            color: white;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h2> Meses del Año con Ordinal</h2>
+    <ul id="listaMeses"></ul>
+
+    <script>
+        const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                       "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        const ordinales = ["1ro", "2do", "3ro", "4to", "5to", "6to", "7mo", "8vo", "9no", "10mo", "11vo", "12vo"];
+        
+        let lista = document.getElementById("listaMeses");
+
+        for (let i = 0; i < meses.length; i++) {
+            let item = document.createElement("li");
+            item.textContent = `${ordinales[i]} - ${meses[i]}`;
+            lista.appendChild(item);
+        }
+    </script>
+</body>
+</html>
