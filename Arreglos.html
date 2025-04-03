@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Operaciones con Arreglo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            text-align: center;
+            margin: 40px;
+        }
+        h2 {
+            color: #00796b;
+            font-size: 24px;
+        }
+        .resultado {
+            background: linear-gradient(to right, #4caf50, #2e7d32);
+            color: white;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            margin-top: 20px;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h2> Resultados del Arreglo</h2>
+    <p id="resultado" class="resultado"></p>
+
+    <script>
+        let arreglo = [10, "Hola", true, 5, "Mundo", false, 3, "!"];
+        let suma = 0;
+        let texto = "";
+        let andBooleanos = true;
+
+        for (let i = 0; i < arreglo.length; i++) {
+            if (typeof arreglo[i] === "number") {
+                suma += arreglo[i];
+            } else if (typeof arreglo[i] === "string") {
+                texto += arreglo[i] + " ";
+            } else if (typeof arreglo[i] === "boolean") {
+                andBooleanos = andBooleanos && arreglo[i];
+            }
+        }
+
+        document.getElementById("resultado").textContent =
+            `Suma: ${suma} | Texto: ${texto} | AND: ${andBooleanos}`;
+    </script>
+</body>
+</html>
